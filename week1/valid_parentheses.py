@@ -14,3 +14,5 @@ class Solution:
     
 parentheses = Solution()
 print(parentheses.isValid("()[]{}"))
+
+# time complexity = O(n)
