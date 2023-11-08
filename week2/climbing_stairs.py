@@ -15,5 +15,5 @@ there is only 1 way to climb 0 and 1 so return 1
 
     - create an array of size n + 1 to store the number of ways to climb to each step
     - steps[i] represents the number of ways to climb to step i
-    steps[i - 1] and steps[i - 2] represent 
+    steps[i - 1] and steps[i - 2] represent both ways to climb 
 '''
