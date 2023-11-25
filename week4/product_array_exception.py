@@ -5,18 +5,17 @@ from typing import List
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        result = [1] * n  # Initialize result array with 1s
+        result = [1] * n 
 
-        # Calculate left products
-        left_product = 1
+        # calc left and right products
+        lp = 1
         for i in range(n):
-            result[i] = left_product
-            left_product *= nums[i]
+            result[i] = lp
+            lp *= nums[i]
 
-        # Calculate right products and update the result array
-        right_product = 1
+        rp = 1
         for i in range(n - 1, -1, -1):
-            result[i] *= right_product
-            right_product *= nums[i]
+            result[i] *= rp
+            rp *= nums[i]
 
         return result
