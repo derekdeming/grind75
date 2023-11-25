@@ -30,3 +30,15 @@ class Solution:
             if not dfs(course, set()):
                 return False
         return True
+    
+    '''
+    courses are nodes and prereqs are directed edges between nodes
+
+    keys = courses
+    values = prereqs for each course  
+
+    using DFS on graphs to detect cycles and check if its possible to finish coursees 
+
+    DFS: check if course in path, if it is it means a cycle is detected and if not, it means it is not. Then check if current course is in set. 
+    
+    '''
