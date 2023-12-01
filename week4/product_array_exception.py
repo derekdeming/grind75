@@ -10,7 +10,7 @@ class Solution:
         # calc left and right products
         lp = 1
         for i in range(n):
-            result[i] = lp
+            result[i] = lp 
             lp *= nums[i]
 
         rp = 1
