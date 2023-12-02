@@ -35,16 +35,7 @@ class Solution:
         return merged_accounts
 
 '''
-Create an empty dictionary called email_to_name to store the mapping of email addresses to names.
-Iterate over each account in the accounts list.
-Extract the name from the first element of the account and assign it to the name variable.
-For each email address in the account (excluding the name), do the following:
-Add the email address as a key in the email_graph dictionary and initialize it with an empty list if it doesn't exist.
-Append the current email address to the list of values for the corresponding account[1] key in the email_graph dictionary.
-Add the email address and its corresponding name to the email_to_name dictionary.
-Define a depth-first search (DFS) function called dfs that takes an email address and a list of emails as parameters.
-Inside the dfs function, check if the current email address has not been visited before.
-If the email address is not in the visited set, add it to the set and append it to the emails list.
-Recursively call the dfs function for each email address in the email_graph dictionary that is connected to the current email address.
-Create an empty set called visited to keep track of the explored email addresses
+build the graph and then dfs to find connected things 
+
+union find 
 '''
