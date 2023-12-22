@@ -2,7 +2,46 @@
 
 from typing import List
 
+
 class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        stack = []
+        max_area = 0
+        for i in range(len(heights)):
+            while stack and heights[stack[-1]] > heights[i]:
+                height = heights[stack.pop()]
+                width = i - stack[-1] - 1 if stack else i
+                max_area = max(max_area, height * width)
+            stack.append(i)
+        
+        while stack:
+            height = heights[stack.pop()]
+            width = len(heights) - stack[-1] - 1 if stack else len(heights)
+            max_area = max(max_area, height * width)
+        
+        return max_area
+    
+'''
+
+revised; stack solution -- track the potential start of each rectangle. when a shorter bar is encountered, pop the stack and calculate the area of the rectangle.
+
+use stack to track the indices of bars which are the potential start positions of rect. the stack ensures that the heights of the bars are in non-decreasing order 
+
+handle shorter bar: when shorter bar is found, it indicates the end of a potential rectangle. we then repeatedly pop the stack and calculate the area of rectangle formed between the current element and the bar at the top of the stack. keep track of the max area.
+
+height of the rect is determined by the height of the ppopped bar. width is determined by the current index of the bar we are processing and the bar at the top of the stack (for empty stack, it is the current index). If it is not empty, the current index - the index of the bar at the top of the stack - 1
+
+updaste max area: after calculating the area, update the max area if necessary
+
+processing remaining bars in stack: after processing all the bars in the histogram, check the stack. if not empty, repeat the above step for the remaining bars.if the stack is empty the width is the total length of histogram
+
+'''
+
+
+
+# this solution below is not accepted bc it exceeds time limit
+
+class Solution2:
     def largestRectangleArea(self, heights: List[int]) -> int:
         return self.helper(heights, 0, len(heights) - 1)
     
