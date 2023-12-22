@@ -31,7 +31,7 @@ handle shorter bar: when shorter bar is found, it indicates the end of a potenti
 
 height of the rect is determined by the height of the ppopped bar. width is determined by the current index of the bar we are processing and the bar at the top of the stack (for empty stack, it is the current index). If it is not empty, the current index - the index of the bar at the top of the stack - 1
 
-updaste max area: after calculating the area, update the max area if necessary
+update max area: after calculating the area, update the max area if necessary
 
 processing remaining bars in stack: after processing all the bars in the histogram, check the stack. if not empty, repeat the above step for the remaining bars.if the stack is empty the width is the total length of histogram
 
