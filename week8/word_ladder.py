@@ -15,7 +15,6 @@ class Solution:
 
         L = len(beginWord)
 
-        # Preprocessing: Generic forms of words
         all_combo_dict = defaultdict(list)
         for word in wordList:
             for i in range(L):
